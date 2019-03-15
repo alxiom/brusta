@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-project(custom_ops)
+project(brustar)
 
 find_package(Torch REQUIRED)
 
