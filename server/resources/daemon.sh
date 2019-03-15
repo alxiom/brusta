@@ -70,6 +70,7 @@ stop() {
   else
     pkill -P ${PID}
     kill ${PID}
+    echo kill ${PID}
     if [[ -n "${PIDFILE}" ]]; then
       rm ${PIDFILE}
     fi
