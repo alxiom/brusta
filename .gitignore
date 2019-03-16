@@ -1,9 +1,9 @@
 .DS_Store
 
-data/
+can/
 
-freezer/build/
-freezer/libtorch/
+launcher/build/
+launcher/libtorch/
 
 burner/.idea/
 burner/lib/
@@ -11,5 +11,5 @@ burner/target/
 burner/project/project/
 burner/project/target/
 
-server/.idea/
-server/__pycache__/
+lever/.idea/
+lever/__pycache__/

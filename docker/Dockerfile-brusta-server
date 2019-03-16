@@ -1,0 +1,20 @@
+FROM ubuntu:16.04
+MAINTAINER completeresidue <hyoungseok.k@gmail.com>
+
+EXPOSE 9000
+
+RUN apt-get update -y
+RUN apt-get install -y wget
+RUN apt-get install -y unzip
+RUN apt-get install -y openjdk-8-jdk
+
+RUN mkdir -p ${HOME}/brusta/launcher
+
+RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O ${HOME}/brusta/launcher/libtorch.zip
+RUN unzip ${HOME}/brusta/launcher/libtorch.zip -d ${HOME}/brusta/launcher
+RUN rm ${HOME}/brusta/launcher/libtorch.zip
+
+RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O ${HOME}/brusta/launcher/mklml.tgz
+RUN tar zxvf ${HOME}/brusta/launcher/mklml.tgz -C ${HOME}/brusta/launcher
+RUN mv ${HOME}/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* ${HOME}/brusta/launcher/libtorch/lib/
+RUN rm -rf ${HOME}/brusta/launcher/mklml*

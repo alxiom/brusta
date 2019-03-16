@@ -26,3 +26,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % loggerV,
   "ch.qos.logback" % "logback-classic" % logbackV
 )
+
+import NativePackagerHelper._
+mappings in Universal ++= directory("lighter")

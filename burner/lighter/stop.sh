@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 ./daemon.sh server.sh stop
