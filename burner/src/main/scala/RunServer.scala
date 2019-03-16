@@ -18,10 +18,6 @@ object RunServer {
   private val libraryPath: String = System.getProperty("lib_path")
   System.load(s"${libraryPath}/libModel.so")
 
-//  println(System.getProperty("java.library.path"))
-//  System.loadLibrary("model")
-//  Runtime.getRuntime.loadLibrary("Model")
-
   private val injector: Injector = Guice.createInjector()
   private val runEval: RunEval = injector.getInstance(classOf[RunEval])
   private val evalJNI: EvalJNI = injector.getInstance(classOf[EvalJNI])
