@@ -1,4 +1,4 @@
-# Brustar
+# Brusta
 + PyTorch model serving project
 + Serve PyTorch model in production envoronments
 
