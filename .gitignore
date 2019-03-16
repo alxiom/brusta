@@ -7,11 +7,9 @@ freezer/libtorch/
 
 burner/.idea/
 burner/lib/
-burner/*.pth
 burner/target/
 burner/project/project/
 burner/project/target/
-burner/src/main/resources/
 
 server/.idea/
 server/__pycache__/
