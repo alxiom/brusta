@@ -26,11 +26,6 @@
             font-weight: lighter;
             color: #a0a0a0;
         }
-
-        .emphasis{
-            font-weight: bolder;
-            color: #101010;
-        }
     </style>
 </head>
 <body>
@@ -57,14 +52,15 @@
             RUN mv /home/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* /home/brusta/launcher/libtorch/lib/<br>
             RUN rm -rf /home/brusta/launcher/mklml*<br>
             <br>
-            ADD <font class="emphasis">/PATH/TO/YOUR_BRUSTA_SERVER_BIN.zip</font> /home/brusta/brusta-server.zip<br>
-            ADD <font class="emphasis">/PATH/TO/YOUR_PTH_FILE.pth</font> /home/brusta/trace_model.pth<br>
+            ADD brusta-server.zip /home/brusta/brusta-server.zip<br>
+            ADD trace_model.pth /home/brusta/trace_model.pth<br>
             <br>
-            RUN unzip /home/brusta/brusta-server.zip<br>
+            RUN unzip /home/brusta/brusta-server.zip -d /home/brusta<br>
             RUN rm /home/brusta/brusta-server.zip<br>
             RUN mv /home/brusta/burner-0.1.0/flint/* /home/brusta<br>
             <br>
-            CMD /home/brusta/start.sh
+            WORKDIR /home/brusta<br>
+            CMD ./start.sh
         </div>
     </div>
 </body>
