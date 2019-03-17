@@ -23,5 +23,5 @@ RUN tar zxvf ${HOME}/brusta/launcher/mklml.tgz -C ${HOME}/brusta/launcher
 RUN mv ${HOME}/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* ${HOME}/brusta/launcher/libtorch/lib/
 RUN rm -rf ${HOME}/brusta/launcher/mklml*
 
-CMD cd ${HOME}/brusta/lever
+WORKDIR ${HOME}/brusta/lever
 CMD sbt run

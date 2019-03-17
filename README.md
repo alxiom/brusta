@@ -5,7 +5,16 @@
 ## requirements
 + docker == 18.09.1
 
+## clone project
+```
+git clone https://github.com/hyoungseok/brusta.git
+cd brusta
+```
+
 ## build and run Dockerfile-brusta
+```
+docker build -t brusta -f docker/Dockerfile-brusta .
+```
 
 ## connect to localhost:9000/build and summit model info
 
