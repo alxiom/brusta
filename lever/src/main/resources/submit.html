@@ -10,37 +10,61 @@
         }
 
         .container{
-            width: 500px;
+            width: 1200px;
+            color: #505050;
             margin: 0 auto;
+        }
+
+        .dockerfile{
+            width: 1200px;
+            background: #ededed;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .filePath{
+            font-weight: lighter;
+            color: #a0a0a0;
+        }
+
+        .emphasis{
+            font-weight: bolder;
+            color: #101010;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Dockerfile Brusta Server</h2>
-        <div id="dockerfile">
+        <p class="filePath">brusta / docker / Dockerfile-brusta-server</p>
+        <div class="dockerfile">
             FROM ubuntu:16.04<br>
-            MAINTAINER completeresidue <hyoungseok.k@gmail.com><br>
+            MAINTAINER completeresidue &lt;hyoungseok.k@gmail.com&gt;<br>
             <br>
             RUN apt-get update -y<br>
             RUN apt-get install -y wget<br>
             RUN apt-get install -y unzip<br>
             RUN apt-get install -y openjdk-8-jdk<br>
             <br>
-            RUN mkdir -p ${HOME}/brusta/launcher<br>
+            RUN mkdir -p /home/brusta/launcher<br>
             <br>
-            RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O ${HOME}/brusta/launcher/libtorch.zip<br>
-            RUN unzip ${HOME}/brusta/launcher/libtorch.zip -d ${HOME}/brusta/launcher<br>
-            RUN rm ${HOME}/brusta/launcher/libtorch.zip<br>
+            RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O /home/brusta/launcher/libtorch.zip<br>
+            RUN unzip /home/brusta/launcher/libtorch.zip -d /home/brusta/launcher<br>
+            RUN rm /home/brusta/launcher/libtorch.zip<br>
             <br>
-            RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O ${HOME}/brusta/launcher/mklml.tgz<br>
-            RUN tar zxvf ${HOME}/brusta/launcher/mklml.tgz -C ${HOME}/brusta/launcher<br>
-            RUN mv ${HOME}/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* ${HOME}/brusta/launcher/libtorch/lib/<br>
-            RUN rm -rf ${HOME}/brusta/launcher/mklml*<br>
+            RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O /home/brusta/launcher/mklml.tgz<br>
+            RUN tar zxvf /home/brusta/launcher/mklml.tgz -C /home/brusta/launcher<br>
+            RUN mv /home/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* /home/brusta/launcher/libtorch/lib/<br>
+            RUN rm -rf /home/brusta/launcher/mklml*<br>
             <br>
-            ADD YOUR_PACKAGE_BIN ${HOME}/brusta<br>
-            ADD YOUR_PTH_FILE ${HOME}/brusta<br>
-
+            ADD <font class="emphasis">/PATH/TO/YOUR_BRUSTA_SERVER_BIN.zip</font> /home/brusta/brusta-server.zip<br>
+            ADD <font class="emphasis">/PATH/TO/YOUR_PTH_FILE.pth</font> /home/brusta/trace_model.pth<br>
+            <br>
+            RUN unzip /home/brusta/brusta-server.zip<br>
+            RUN rm /home/brusta/brusta-server.zip<br>
+            RUN mv /home/brusta/burner-0.1.0/flint/* /home/brusta<br>
+            <br>
+            CMD /home/brusta/start.sh
         </div>
     </div>
 </body>

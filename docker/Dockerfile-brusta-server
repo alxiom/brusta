@@ -16,3 +16,12 @@ RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019
 RUN tar zxvf /home/brusta/launcher/mklml.tgz -C /home/brusta/launcher
 RUN mv /home/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* /home/brusta/launcher/libtorch/lib/
 RUN rm -rf /home/brusta/launcher/mklml*
+
+ADD /PATH/TO/YOUR_BRUSTA_SERVER_BIN.zip /home/brusta/brusta-server.zip
+ADD /PATH/TO/YOUR_PTH_FILE.pth /home/brusta/trace_model.pth
+
+RUN unzip /home/brusta/brusta-server.zip
+RUN rm /home/brusta/brusta-server.zip
+RUN mv /home/brusta/burner-0.1.0/flint/* /home/brusta
+
+CMD /home/brusta/start.sh
