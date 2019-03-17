@@ -42,11 +42,11 @@ class SummitService {
           s"""inputDim=${parameterMap("inputFeatureSize").toInt * parameterMap("inputSequenceSize").toInt}"""
         (headerTextInType, configTextInType)
     }
+    writeText(headerFilePath, headerTextFinal)
+    writeText(configFilePath, configTextFinal)
     s"cp ${projectPath}/launcher/Model-${modelType.toUpperCase}.cpp ${projectPath}/launcher/Model.cpp".!
     s"${projectPath}/lever/ignite.sh".!
     s"mv ${projectPath}/burner-0.1.0.zip /tmp/specialName".!
-    writeText(headerFilePath, headerTextFinal)
-    writeText(configFilePath, configTextFinal)
   }
 
 }
