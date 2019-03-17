@@ -7,7 +7,7 @@
 + wget == 1.20.1
 
 ## On Build Server
-1. create ```Dockerfile-brusta``` on your model-building machine
+1. create ```Dockerfile-brusta``` on your model-builder machine
 ```
 mkdir -p brusta/docker
 wget https://raw.githubusercontent.com/hyoungseok/brusta/master/docker/Dockerfile-brusta -P brusta/docker
@@ -29,7 +29,7 @@ docker run -p 8080:8080 --name brustar -it --rm -v ${PWD}/portal:/home/brusta/po
 + resulting ```brusta-server.zip``` file will be located under ```portal``` directory with requested timestamp
 
 ## On Model Server
-1. create ```Dockerfile-brusta-server``` on your model-serving machine
+1. create ```Dockerfile-brusta-server``` on your model-server machine
 ```
 mkdir -p brusta/docker
 wget https://raw.githubusercontent.com/hyoungseok/brusta/master/docker/Dockerfile-brusta-server -P brusta/docker
