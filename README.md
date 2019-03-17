@@ -51,3 +51,10 @@ cp /PATH/TO/YOUR_PTH_FILE.pth trace_model.pth
 docker build -t brusta-server -f docker/Dockerfile-brusta-server .
 docker run -d -p 8080:8080 --name brustar-server --rm -v ${PWD}/logs:/home/brusta/logs brusta-server
 ```
+
+## Contributors
++ YongRae Jo (http://dreamgonfly.github.io)
++ YoonHo Jo (ed.cho@company.ai)
+
+## Author
++ Alex Kim (hyoungseok.k@gmail.com)
