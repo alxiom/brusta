@@ -28,4 +28,4 @@ libraryDependencies ++= Seq(
 )
 
 import NativePackagerHelper._
-mappings in Universal ++= directory("lighter")
+mappings in Universal ++= directory("flint")

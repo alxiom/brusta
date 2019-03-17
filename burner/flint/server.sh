@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p $HOME/tmp
+mkdir -p ${HOME}/tmp
 
 binPath=./burner-0.1.0/bin/burner
 

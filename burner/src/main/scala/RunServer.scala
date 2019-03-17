@@ -26,7 +26,7 @@ object RunServer {
   def main(args: Array[String]): Unit = {
     println(s"serverStart\u241Btimestamp=${System.currentTimeMillis()}\u241BmodelPointer=${modelP}")
 
-    HttpServer.start("PyTorchModelServer", port){initContext =>
+    HttpServer.start("burner", port){initContext =>
       new Initializer(initContext) {
         override def onConnect: RequestHandlerFactory = serverContext => {
           new ManageRequest(serverContext, inputDim, runEval, modelP)
