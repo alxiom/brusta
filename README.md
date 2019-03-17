@@ -7,7 +7,7 @@
 + wget == 1.20.1
 
 ## On Build Server
-1. create ```Dockerfile-brusta``` on your model-serving machine
+1. create ```Dockerfile-brusta``` on your model-building machine
 ```
 mkdir -p brusta/docker
 wget https://raw.githubusercontent.com/hyoungseok/brusta/master/docker/Dockerfile-brusta -P brusta/docker
