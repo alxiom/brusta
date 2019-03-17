@@ -12,7 +12,7 @@ object RunServer {
   implicit val actorSystem: ActorSystem = ActorSystem()
   implicit val ioSystem: IOSystem = IOSystem()
 
-  private val port: Int = System.getProperty("port", "9000").toInt
+  private val port: Int = System.getProperty("port", "8080").toInt
   private val inputDim: Long = System.getProperty("input_dim").toLong
   private val modelPath: String = System.getProperty("model_path")
   private val libraryPath: String = System.getProperty("lib_path")

@@ -11,7 +11,7 @@ git clone https://github.com/hyoungseok/brusta.git
 cd brusta
 docker build -t brusta -f docker/Dockerfile-brusta .
 mkdir portal
-docker run -p 8080:8080 --name brustar -it --rm --volume portal:/tmp brusta
+docker run -p 8080:8080 --name brustar -it --rm --volume ${PWD}/portal:/home/brusta/portal brusta
 ```
 
 ## connect to ```localhost:8080/build``` and summit model info

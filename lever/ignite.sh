@@ -13,6 +13,6 @@ mv ${projectPath}/launcher/build/libModel.so ${projectPath}/burner/lib
 cd ${projectPath}/burner
 sbt universal:packageBin
 
-mkdir /tmp/dt=${now}
-mv ${projectPath}/burner/target/universal/burner-0.1.0.zip /tmp/dt=${now}/brusta-server.zip
+mkdir -p ${projectPath}/portal/dt=${now}
+mv ${projectPath}/burner/target/universal/burner-0.1.0.zip ${projectPath}/portal/dt=${now}/brusta-server.zip
 echo ${now} brusta-server is created
