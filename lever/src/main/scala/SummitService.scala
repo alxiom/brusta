@@ -42,13 +42,10 @@ class SummitService {
           s"""inputDim=${parameterMap("inputFeatureSize").toInt * parameterMap("inputSequenceSize").toInt}"""
         (headerTextInType, configTextInType)
     }
-    val now = java.time.Instant.now.toString
     writeText(headerFilePath, headerTextFinal)
     writeText(configFilePath, configTextFinal)
     s"cp ${projectPath}/launcher/Model-${modelType.toUpperCase}.cpp ${projectPath}/launcher/Model.cpp".!
     s"${projectPath}/lever/ignite.sh".!
-    s"mkdir -p /tmp/server/dt=${now}".!
-    s"mv ${projectPath}/burner/target/universal/burner-0.1.0.zip /tmp/server/dt=${now}/brusta-server.zip".!
   }
 
 }
