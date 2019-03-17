@@ -45,7 +45,7 @@ class ManageRequest @Inject()(context: ServerContext, summitService: SummitServi
         }).toMap
         if (parameterMap.values.forall(x => x.nonEmpty)) {
           summitService(parameterMap)
-          Callback.successful(req.ok(submit, HttpHeaders(jsonHeader)))
+          Callback.successful(req.ok(submit, HttpHeaders(htmlHeader)))
         } else {
           val emptyInputErrorJson = """{"status": "error", "code": 400, "message": "empty input"}"""
           log.info(s"returnFail\u241BparameterMap=${parameterMap}")

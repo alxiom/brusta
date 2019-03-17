@@ -14,6 +14,7 @@ cd brusta
 ## build and run Dockerfile-brusta
 ```
 docker build -t brusta -f docker/Dockerfile-brusta .
+docker run -d -p 9000:9000 --name brusta --rm brusta
 ```
 
 ## connect to localhost:9000/build and summit model info

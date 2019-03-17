@@ -9,4 +9,3 @@ mkdir ${projectPath}/burner/lib
 mv ${projectPath}/launcher/build/libModel.so ${projectPath}/burner/lib
 cd ${projectPath}/burner
 sbt universal:packageBin
-mv ${projectPath}/burner/target/universal/burner-0.1.0.zip ${projectPath}

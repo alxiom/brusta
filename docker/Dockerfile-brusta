@@ -3,6 +3,8 @@ MAINTAINER completeresidue <hyoungseok.k@gmail.com>
 
 EXPOSE 9000
 
+VOLUME . /tmp
+
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list 
 RUN apt-get update -y
 RUN apt-get install -y build-essential
@@ -22,6 +24,9 @@ RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019
 RUN tar zxvf ${HOME}/brusta/launcher/mklml.tgz -C ${HOME}/brusta/launcher
 RUN mv ${HOME}/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* ${HOME}/brusta/launcher/libtorch/lib/
 RUN rm -rf ${HOME}/brusta/launcher/mklml*
+
+WORKDIR /root/brusta/burner
+RUN sbt update
 
 WORKDIR /root/brusta/lever
 RUN sbt update
