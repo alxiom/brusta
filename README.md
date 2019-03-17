@@ -11,7 +11,7 @@
 git clone https://github.com/hyoungseok/brusta.git
 cd brusta
 docker build -t brusta -f docker/Dockerfile-brusta .
-docker run -p 8080:8080 --name brustar -it --rm --volume ${PWD}/portal:/home/brusta/portal brusta
+docker run -p 8080:8080 --name brustar -it --rm -v ${PWD}/portal:/home/brusta/portal brusta
 ```
 
 2. Connect to ```localhost:8080/build``` and summit model info
@@ -27,5 +27,5 @@ cp /PATH/TO/YOUR_PTH_FILE.pth trace_model.pth
 2. Build and run Dockerfile-brusta-server
 ```
 docker build -t brusta-server -f docker/Dockerfile-brusta-server .
-docker run -d -p 8080:8080 --name brustar-server --rm --volumn ${PWD}/logs:/home/brusta/logs brusta-server
+docker run -d -p 8080:8080 --name brustar-server --rm -v ${PWD}/logs:/home/brusta/logs brusta-server
 ```
