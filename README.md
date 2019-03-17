@@ -9,12 +9,12 @@
 ```
 git clone https://github.com/hyoungseok/brusta.git
 cd brusta
-mkdir portal
 ```
 
 ## build and run Dockerfile-brusta
 ```
 docker build -t brusta -f docker/Dockerfile-brusta .
+mkdir portal
 docker run -p 8080:8080 --name brustar -it --rm --volume portal:/tmp brusta
 ```
 
