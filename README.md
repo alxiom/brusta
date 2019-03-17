@@ -14,10 +14,10 @@ cd brusta
 ## build and run Dockerfile-brusta
 ```
 docker build -t brusta -f docker/Dockerfile-brusta .
-docker run -d -p 9000:9000 --name brusta --rm brusta
+docker run -d -p 8080:8080 -volume .:/tmp --name brusta --rm brusta
 ```
 
-## connect to localhost:9000/build and summit model info
+## connect to localhost:8080/build and summit model info
 
 ## add your pth file and Brusta result package binary path to Dockerfile-brusta-server
 

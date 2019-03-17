@@ -1,10 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER completeresidue <hyoungseok.k@gmail.com>
 
-EXPOSE 9000
-
-VOLUME . /tmp
-
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list 
 RUN apt-get update -y
 RUN apt-get install -y build-essential

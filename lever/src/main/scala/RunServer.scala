@@ -12,7 +12,7 @@ object RunServer {
   implicit val actorSystem: ActorSystem = ActorSystem()
   implicit val ioSystem: IOSystem = IOSystem()
 
-  private val port: Int = 9000
+  private val port: Int = 8080
   private val injector: Injector = Guice.createInjector()
   private val summitService = injector.getInstance(classOf[SummitService])
 
