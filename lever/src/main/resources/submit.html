@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Brusta</title>
+    <style>
+        body{
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', serif;
+            line-height: 1.6
+        }
+
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Dockerfile Brusta Server</h2>
+        <div id="dockerfile">
+            FROM ubuntu:16.04<br>
+            MAINTAINER completeresidue <hyoungseok.k@gmail.com><br>
+            <br>
+            EXPOSE 9000<br>
+            <br>
+            RUN apt-get update -y<br>
+            RUN apt-get install -y wget<br>
+            RUN apt-get install -y unzip<br>
+            RUN apt-get install -y openjdk-8-jdk<br>
+            <br>
+            RUN mkdir -p ${HOME}/brusta/launcher<br>
+            <br>
+            RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O ${HOME}/brusta/launcher/libtorch.zip<br>
+            RUN unzip ${HOME}/brusta/launcher/libtorch.zip -d ${HOME}/brusta/launcher<br>
+            RUN rm ${HOME}/brusta/launcher/libtorch.zip<br>
+            <br>
+            RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O ${HOME}/brusta/launcher/mklml.tgz<br>
+            RUN tar zxvf ${HOME}/brusta/launcher/mklml.tgz -C ${HOME}/brusta/launcher<br>
+            RUN mv ${HOME}/brusta/launcher/mklml_lnx_2019.0.3.20190220/lib/* ${HOME}/brusta/launcher/libtorch/lib/<br>
+            RUN rm -rf ${HOME}/brusta/launcher/mklml*<br>
+            <br>
+            ADD YOUR_PACKAGE_BIN ${HOME}/brusta<br>
+            ADD YOUR_PTH_FILE ${HOME}/brusta<br>
+
+        </div>
+    </div>
+</body>
+</html>

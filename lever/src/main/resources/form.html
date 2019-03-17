@@ -1,0 +1,149 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Brusta</title>
+    <style>
+        body{
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', serif;
+            line-height: 1.6
+        }
+
+        .container{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        form div + div {
+            margin-top: 1em;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+
+        input {
+            line-height: 1.6
+        }
+
+        ul.tabs{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        ul.tabs li{
+            background: none;
+            color: #222;
+            display: inline-block;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        ul.tabs li.current{
+            background: #ededed;
+            color: #222;
+        }
+
+        .tab-content{
+            display: none;
+            background: #ededed;
+            padding: 15px;
+        }
+
+        .tab-content.current{
+            display: inherit;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            $('ul.tabs li').click(function(){
+                var tab_id = $(this).attr('data-tab');
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+                $(this).addClass('current');
+                $("#"+tab_id).addClass('current');
+            })
+        })
+    </script>
+    <script>
+        function checkForm() {
+            return confirm('Really request build with the parameters?');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>PyTorch Model Info</h2>
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="dnn">DNN</li>
+            <li class="tab-link" data-tab="rnn">RNN</li>
+        </ul>
+
+        <div id="dnn" class="tab-content current">
+            <form action="http://localhost:9000/submit" method="post" onsubmit="return checkForm(this);">
+                <input type="hidden" name="type" value="dnn">
+                <div>
+                    <label>Input Dimension : </label>
+                    <input type="text" name="inputFeatureSize" size="11" placeholder="feat dim">
+                </div>
+
+                <div>
+                    <label>Output Dimension : </label>
+                    <input type="text" name="outputFeatureSize" size="11" placeholder="feat dim">
+                </div>
+
+                <div>
+                    <label>Server Port : </label>
+                    <input type="text" name="port" size="11" value="9000">
+                </div>
+
+                <div>
+                    <label>Server Memory : </label>
+                    <input type="text" name="memory" size="11" value="500"> MB
+                </div>
+
+                <div>
+                    <label></label>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+        <div id="rnn" class="tab-content">
+            <form action="http://localhost:9000/submit" method="post" onsubmit="return checkForm(this);">
+                <input type="hidden" name="type" value="rnn">
+                <div>
+                    <label>Input Dimension : </label>
+                    <input type="text" name="inputSequenceSize" size="11" placeholder="seq dim"> &times;
+                    <input type="text" name="inputFeatureSize" size="11" placeholder="feat dim">
+                </div>
+
+                <div>
+                    <label>Output Dimension : </label>
+                    <input type="text" name="outputFeatureSize" size="11" placeholder="feat dim">
+                </div>
+
+                <div>
+                    <label>Server Port : </label>
+                    <input type="text" name="port" size="11" value="9000">
+                </div>
+
+                <div>
+                    <label>Server Memory : </label>
+                    <input type="text" name="memory" size="11" value="500"> MB
+                </div>
+
+                <div>
+                    <label></label>
+		    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
