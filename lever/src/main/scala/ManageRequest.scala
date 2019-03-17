@@ -9,9 +9,8 @@ import colossus.protocols.http._
 import colossus.service.Callback
 import colossus.service.GenRequestHandler.PartialHandler
 import org.json4s._
-
-//import org.json4s.native.JsonMethods.parse
 import javax.inject.{Inject, Singleton}
+import scala.concurrent.Future
 
 @Singleton
 class ManageRequest @Inject()(context: ServerContext, summitService: SummitService) extends RequestHandler(context) {
@@ -44,7 +43,7 @@ class ManageRequest @Inject()(context: ServerContext, summitService: SummitServi
           (s.head, s.last)
         }).toMap
         if (parameterMap.values.forall(x => x.nonEmpty)) {
-          summitService(parameterMap)
+          Future.successful(summitService(parameterMap))
           Callback.successful(req.ok(submit, HttpHeaders(htmlHeader)))
         } else {
           val emptyInputErrorJson = """{"status": "error", "code": 400, "message": "empty input"}"""

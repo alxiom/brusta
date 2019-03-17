@@ -5,20 +5,16 @@
 ## requirements
 + docker == 18.09.1
 
-## clone project
+## build and run Dockerfile-brusta
 ```
 git clone https://github.com/hyoungseok/brusta.git
 cd brusta
-```
-
-## build and run Dockerfile-brusta
-```
 docker build -t brusta -f docker/Dockerfile-brusta .
 mkdir portal
 docker run -p 8080:8080 --name brustar -it --rm --volume portal:/tmp brusta
 ```
 
-## connect to localhost:8080/build and summit model info
+## connect to ```localhost:8080/build``` and summit model info
 
 ## add your pth file and Brusta result package binary path to Dockerfile-brusta-server
 
