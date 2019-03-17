@@ -7,9 +7,14 @@ launcher/libtorch/
 
 burner/.idea/
 burner/lib/
+burner/logs/
 burner/target/
 burner/project/project/
 burner/project/target/
 
 lever/.idea/
-lever/__pycache__/
+lever/lib/
+lever/logs/
+lever/target/
+lever/project/project/
+lever/project/target/
