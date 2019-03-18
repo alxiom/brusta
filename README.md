@@ -54,7 +54,7 @@ docker run -d -p 8080:8080 --name brustar-server --rm -v ${PWD}/logs:/home/brust
 
 ## Contributors
 + YongRae Jo (dreamgonfly@gmail.com)
-+ YoonHo Jo (ed.cho@company.ai)
++ YoonHo Jo (cloudjo21@gmail.com)
 
 ## Author
 + Alex Kim (hyoungseok.k@gmail.com)
