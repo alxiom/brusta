@@ -23,9 +23,10 @@ cd brusta
 docker build -t brusta -f docker/Dockerfile-brusta .
 docker run -p 8080:8080 --name brustar -it --rm -v ${PWD}/portal:/home/brusta/portal brusta
 ```
+docker build takes 10-20 minutes in average
 
 3. connect to ```localhost:8080/build``` with web browser and summit model infomation
-+ build takes 10-20 seconds in average
++ model build takes 10-20 seconds in average
 + resulting ```brusta-server.zip``` file will be located under ```portal``` directory with requested timestamp
 
 ## On Model Server
