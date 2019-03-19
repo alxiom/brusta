@@ -54,6 +54,12 @@ docker run -d -p 8080:8080 --name brustar-server --rm -v ${PWD}/logs:/home/brust
 ```
 docker build takes about 5 minutes
 
+## Request Example
+request to the model server as follow
+```
+curl -X POST -d '{"input":[1.0, 1.0, 1.0]}' localhost:8080/model/predict
+```
+
 ## Contributors
 + YongRae Jo (dreamgonfly@gmail.com)
 + YoonHo Jo (cloudjo21@gmail.com)
