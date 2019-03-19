@@ -63,6 +63,7 @@ curl -X POST -d '{"input":[1.0, 1.0, 1.0]}' localhost:8080/model/predict
 ## Contributors
 + YongRae Jo (dreamgonfly@gmail.com)
 + YoonHo Jo (cloudjo21@gmail.com)
++ GiChang Lee (new.ratsgo@gmail.com)
 
 ## Author
 + Alex Kim (hyoungseok.k@gmail.com)
