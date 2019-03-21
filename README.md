@@ -41,12 +41,13 @@ or simply just clone Brusta repo
 git clone https://github.com/hyoungseok/brusta.git 
 ```
 
-2. copy your ```pth``` file and ```brusta-server.zip``` file to brusta directory
+2. copy your JIT traced model file (```pth``` file) and ```brusta-server.zip``` file to brusta directory
 ```
 cd brusta
 cp /PATH/TO/YOUR_BRUSTA_SERVER_BIN.zip brusta-server.zip
 cp /PATH/TO/YOUR_PTH_FILE.pth trace_model.pth
 ```
+If you are not familiar with JIT tracing, please refer [JIT Tutorial](https://github.com/hyoungseok/jitTutorial)
 
 3. build and run ```Dockerfile-brusta-server```
 ```
@@ -56,7 +57,7 @@ docker run -d -p 8080:8080 --name brustar-server --rm -v ${PWD}/logs:/home/brust
 docker build takes about 5 minutes
 
 ## Request Example
-request to the model server as follow
+request to the model server as follow (suppose your input dimension is 3)
 ```
 curl -X POST -d '{"input":[1.0, 1.0, 1.0]}' localhost:8080/model/predict
 ```
