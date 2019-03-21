@@ -1,13 +1,19 @@
 ![Brusta logo](https://user-images.githubusercontent.com/16871455/54772005-d2889200-4c49-11e9-90e7-dce87c9305ea.png)
 # Brusta
-+ PyTorch model serving project
-+ serve PyTorch model in production envoronments
++ Language-agnostic PyTorch model serving
++ serve JIT compiled PyTorch model in production environment
 
 ## Requirements
 + docker == 18.09.1
 + wget == 1.20.1
++ your JIT traced PyTorch model (If you are not familiar with JIT tracing, please refer [JIT Tutorial](https://github.com/hyoungseok/jitTutorial))
 
-## On Build Server
+## Process Flow
+1. run a "build server" to make your PyTorch model server binary
+2. load your traced PyTorch model file on the "model server"
+3. run the model server
+
+## Details On Build Server
 1. create ```Dockerfile-brusta``` on your model-builder machine
 ```
 mkdir -p brusta/docker
@@ -30,7 +36,7 @@ docker build takes 10-20 minutes in average
 + model build takes 10-20 seconds in average
 + resulting ```brusta-server.zip``` file will be located under ```portal``` directory with requested timestamp
 
-## On Model Server
+## Details On Model Server
 1. create ```Dockerfile-brusta-server``` on your model-server machine
 ```
 mkdir -p brusta/docker
@@ -47,7 +53,6 @@ cd brusta
 cp /PATH/TO/YOUR_BRUSTA_SERVER_BIN.zip brusta-server.zip
 cp /PATH/TO/YOUR_PTH_FILE.pth trace_model.pth
 ```
-If you are not familiar with JIT tracing, please refer [JIT Tutorial](https://github.com/hyoungseok/jitTutorial)
 
 3. build and run ```Dockerfile-brusta-server```
 ```
