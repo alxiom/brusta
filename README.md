@@ -1,4 +1,4 @@
-![Brusta logo](https://user-images.githubusercontent.com/16871455/54768632-e7adf280-4c42-11e9-97a7-c75ccb2c957d.png)
+![Brusta logo](https://user-images.githubusercontent.com/16871455/54772005-d2889200-4c49-11e9-90e7-dce87c9305ea.png)
 # Brusta
 + PyTorch model serving project
 + serve PyTorch model in production envoronments
