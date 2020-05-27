@@ -5,4 +5,4 @@ find_package(Torch REQUIRED)
 
 add_library(Model SHARED Model.cpp)
 target_link_libraries(Model "${TORCH_LIBRARIES}")
-set_property(TARGET Model PROPERTY CXX_STANDARD 11)
+set_property(TARGET Model PROPERTY CXX_STANDARD 14)

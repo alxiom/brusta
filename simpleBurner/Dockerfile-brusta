@@ -8,14 +8,9 @@ RUN apt-get install -y unzip
 
 RUN mkdir -p /home/brusta
 
-RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-latest.zip -O /home/brusta/libtorch.zip
+RUN wget https://download.pytorch.org/libtorch/cpu/libtorch-shared-with-deps-1.5.0%2Bcpu.zip -O /home/brusta/libtorch.zip
 RUN unzip /home/brusta/libtorch.zip -d /home/brusta
 RUN rm /home/brusta/libtorch.zip
-
-RUN wget https://github.com/intel/mkl-dnn/releases/download/v0.18/mklml_lnx_2019.0.3.20190220.tgz -O /home/brusta/mklml.tgz
-RUN tar zxvf /home/brusta/mklml.tgz -C /home/brusta
-RUN mv /home/brusta/mklml_lnx_2019.0.3.20190220/lib/* /home/brusta/libtorch/lib/
-RUN rm -rf /home/brusta/mklml*
 
 ADD src /home/brusta/src
 

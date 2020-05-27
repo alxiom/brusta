@@ -20,7 +20,7 @@ namespace pytorch {
         vector<torch::jit::IValue> inputTensor;
         inputTensor.push_back(inputVector);
         at::Tensor outputTensor = this -> module.forward(inputTensor).toTensor();
-        vector<float> outputVector(outputTensor.data<float>(), outputTensor.data<float>() + outputTensor.numel());
+        vector<float> outputVector(outputTensor.data_ptr<float>(), outputTensor.data_ptr<float>() + outputTensor.numel());
         return outputVector;
     }
 
