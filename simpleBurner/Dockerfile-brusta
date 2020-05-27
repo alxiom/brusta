@@ -18,7 +18,6 @@ RUN mv /home/brusta/mklml_lnx_2019.0.3.20190220/lib/* /home/brusta/libtorch/lib/
 RUN rm -rf /home/brusta/mklml*
 
 ADD src /home/brusta/src
-ADD trace_model.pth /home/brusta/trace_model.pth
 
 WORKDIR /home/brusta/src/build
 RUN cmake -DCMAKE_PREFIX_PATH=../libtorch ..
