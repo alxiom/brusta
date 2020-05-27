@@ -4,8 +4,8 @@ simplify overall code
 + keep name `burner`
 + to manage batch / output dimension, see `Model.cpp`
 
-## build image & `.so` file
-excute below on current directory
+## build image
+excute below on current directory to create `libModel.so` file under `/home/brusta`
 ```
 docker build -t brusta -f Dockerfile-brusta .
 ```
