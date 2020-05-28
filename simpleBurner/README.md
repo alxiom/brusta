@@ -13,4 +13,14 @@ docker build -t brusta -f Dockerfile-brusta .
 ```
 
 ## copy file from temporary container of above image
+1. run temporary docker container
+```
+docker run -it --rm brusta bash
+```
+2. copy container hostname and copy `libModel.so`
+```
+docker cp [container hostname]:/home/brusta/libModel.so [destination path]
+```
+3. quit temporary container
+
 [link](https://www.youtube.com/watch?v=KtujZdV3G1E)
