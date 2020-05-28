@@ -1,12 +1,13 @@
 # simple burner
 simplify overall code
 + independent with `.pth` file
-+ keep name `burner`
++ please use package name as `burner`
 + to manage batch / output dimension, see `Model.cpp`
 
 ## build image
-excute below on current directory to create `libModel.so` file under `/home/brusta`
+excute below uner `simpleBurner` directory to create `libModel.so` file under `/home/brusta`
 ```
+cd simpleBurner
 docker build -t brusta -f Dockerfile-brusta .
 ```
 
