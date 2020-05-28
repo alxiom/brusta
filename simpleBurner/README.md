@@ -1,8 +1,9 @@
 # simple burner
 simplify overall code
++ libTorch == 1.5.0 (cpu, linux)
 + independent with `.pth` file
-+ please use package name as `burner`
-+ to manage batch / output dimension, see `Model.cpp`
++ please keep package name as `burner` in your external code
++ to manage batch / output dimension, see `src/Model.cpp`
 
 ## build image
 excute below uner `simpleBurner` directory to create `libModel.so` file under `/home/brusta`
