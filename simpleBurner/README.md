@@ -16,15 +16,9 @@ cd simpleBurner
 docker build -t brusta -f Dockerfile-brusta .
 ```
 
-## copy file from temporary container of above image ([video](https://www.youtube.com/watch?v=KtujZdV3G1E))
-1. run temporary docker container
+## copy file from temporary container of above image
+after build `brusta` image, run below
 ```
-docker run -it --rm brusta bash
+cd simpleBurner
+./copy-from-docker.sh
 ```
-2. copy container hostname and copy `libModel.so`
-```
-docker cp [container hostname]:/home/brusta/libModel.so [destination path]
-```
-3. quit temporary container
-
-
