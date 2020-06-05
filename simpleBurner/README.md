@@ -1,6 +1,6 @@
 # simple burner
 simplify overall code
-+ docker == 18.09.1
++ docker == 19.03.8
 + libTorch == 1.5.0 (cpu, linux)
 + independent with `.pth` file
 + please keep package name as `burner` in your external code
