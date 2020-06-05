@@ -6,7 +6,7 @@ simplify brusta code
 
 ## compatiblility
 + `torch.jit.trace` or `torch.jit.script` result `.pth` file (PyTorch >= 1.2.0, recommand 1.5.0)
-+ in your application code, create a `burner` package and make `EvalJNI` class under the package to call `EvalJNI` function (see `src/EvalJNI.h`)
++ in your application code, create a `burner` package and make `EvalJNI` class under the package (see `src/EvalJNI.h`)
 + SEE `src/ModelSpec.hpp` AND SET BATCH / OUTPUT DIMENSION!
 
 ## build image
