@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 
 RUN apt-get update -y
 RUN apt-get install -y build-essential
+RUN apt-get install -y openjdk-8-jdk
 RUN apt-get install -y cmake
 RUN apt-get install -y wget
 RUN apt-get install -y unzip
