@@ -1,10 +1,13 @@
 # simple burner
-simplify overall code
+simplify brusta code
+
+# requirements
 + docker == 19.03.8
-+ libTorch == 1.5.0 (cpu, linux)
-+ independent with `.pth` file
-+ please keep package name as `burner` in your external code
-+ to manage batch / output dimension, see `src/Model.cpp`
+
+# compatiblility
++ `torch.jit.trace` or `torch.jit.script` result `.pth` file (PyTorch >= 1.2.0, recommand 1.5.0)
++ package name of your application uses `EvalJNI` should be `burner`
++ SEE `src/ModelSpec.hpp` AND SET BATCH / OUTPUT DIMENSION
 
 ## build image
 excute below uner `simpleBurner` directory to create `libModel.so` file under `/home/brusta`
