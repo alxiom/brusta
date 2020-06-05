@@ -22,3 +22,4 @@ after build `brusta` image, run below
 cd simpleBurner
 ./copy-from-docker.sh
 ```
+you will get `libModel.so` in current directory
