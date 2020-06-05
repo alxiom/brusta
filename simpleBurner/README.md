@@ -13,7 +13,7 @@ cd simpleBurner
 docker build -t brusta -f Dockerfile-brusta .
 ```
 
-## copy file from temporary container of above image ([link](https://www.youtube.com/watch?v=KtujZdV3G1E))
+## copy file from temporary container of above image ([YouTube link](https://www.youtube.com/watch?v=KtujZdV3G1E))
 1. run temporary docker container
 ```
 docker run -it --rm brusta bash
