@@ -1,10 +1,8 @@
 #include <iostream>
 #include <torch/script.h>
 #include "Model.hpp"
+#include "ModelSpec.hpp"
 #include "EvalJNI.h"
-
-#define BATCH_SIZE 1
-#define OUTPUT_SIZE 1
 
 using namespace std;
 
