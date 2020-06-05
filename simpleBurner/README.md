@@ -1,10 +1,10 @@
 # simple burner
 simplify brusta code
 
-# requirements
+## requirements
 + docker == 19.03.8
 
-# compatiblility
+## compatiblility
 + `torch.jit.trace` or `torch.jit.script` result `.pth` file (PyTorch >= 1.2.0, recommand 1.5.0)
 + package name of your application uses `EvalJNI` should be `burner`
 + SEE `src/ModelSpec.hpp` AND SET BATCH / OUTPUT DIMENSION
